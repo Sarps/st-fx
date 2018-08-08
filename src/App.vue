@@ -40,12 +40,12 @@
           </v-flex>
         </v-layout>
         <v-layout row wrap class="mt-3">
-          <v-flex xs4 sm8 md8>
+          <v-flex xs4 sm8 md6>
             <v-card>
-              <TabbedTable :headers="headers"/>
+              <TabbedTable :headers="history"/>
             </v-card>
           </v-flex>
-          <v-flex sm4 md4>
+          <v-flex sm4 md6>
             <v-card>
               <tabbed-table :headers="fxHeaders" :values="fxData"/>
             </v-card>
@@ -53,7 +53,7 @@
         </v-layout>
       </v-container>
     </v-content>
-    <v-footer fixed app color="primary">
+    <v-footer fixed app color="primary" class="darken-2">
       <ticker></ticker>
     </v-footer>
   </v-app>
@@ -82,18 +82,17 @@ export default {
         { text: "Cash Buying" },
         { text: "Cash Selling" },
       ],
-      headers: [
+      history: [
         {
-          text: "Dessert",
+          text: "Transaction Id",
           align: "left",
           sortable: false,
           value: "name"
         },
-        { text: "Calories", value: "calories" },
-        { text: "Fat (g)", value: "fat" },
-        { text: "Carbs (g)", value: "carbs" },
-        { text: "Protein (g)", value: "protein" },
-        { text: "Iron (%)", value: "iron" }
+        { text: "From", value: "calories" },
+        { text: "To", value: "fat" },
+        { text: "Amount", value: "carbs" },
+        { text: "Date / Time", value: "protein" },
       ],
       fxData: [
         {
